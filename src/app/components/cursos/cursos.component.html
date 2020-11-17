@@ -5,14 +5,13 @@
                 <div class="card-body">
                   <h5 class="card-title">{{curso.nombre}}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">{{curso.nombreCategoria}}</h6>
-                  <a routerLink='/curso/{{curso.id}}' class="card-link">Ver más</a>
+                  <a routerLink='/curso/{{cursos.id}}' class="card-link">Ver más</a>
                 </div>
               </div>            
         </div> 
     </div>
 </div>
  
-
  <ng-template #loading>
 <app-loading value="cursos"></app-loading>    
 </ng-template>

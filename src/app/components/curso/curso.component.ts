@@ -8,17 +8,17 @@ import { CursosService } from '../cursos/cursos.service';
   styleUrls: ['./curso.component.css']
 })
 export class CursoComponent implements OnInit {
-  curso: [] = []
-  constructor(private activatedRoute: ActivatedRoute, private service: CursosService) { }
+  curso: [] = [];
+  constructor(private activatedRoute: ActivatedRoute, private _service: CursosService) { }
   
   async ngOnInit() {
-  this.loadCurso();
+   this.loadCurso();
 }
 
 async loadCurso(){
   const params = this.activatedRoute.snapshot.params.id;
   // console.log(params);
-  const curso:any = await this.service.single(params);
+  const curso:any = await this._service.single(params);
   this.curso = curso;
 }
 
