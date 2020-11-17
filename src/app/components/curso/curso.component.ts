@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CursosService } from '../cursos/cursos.service';
-import { CursoService } from './curso.service';
 
 @Component({
   selector: 'app-curso',
@@ -9,8 +8,8 @@ import { CursoService } from './curso.service';
   styleUrls: ['./curso.component.css']
 })
 export class CursoComponent implements OnInit {
-  curso: Array<Object> = [];
-  constructor(private activatedRoute: ActivatedRoute, private service: CursoService) { }
+  curso: [] = []
+  constructor(private activatedRoute: ActivatedRoute, private service: CursosService) { }
   
   async ngOnInit() {
   this.loadCurso();
@@ -18,7 +17,7 @@ export class CursoComponent implements OnInit {
 
 async loadCurso(){
   const params = this.activatedRoute.snapshot.params.id;
-  console.log(params);
+  // console.log(params);
   const curso:any = await this.service.single(params);
   this.curso = curso;
 }

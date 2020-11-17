@@ -10,5 +10,9 @@ export class CursosService extends BaseService {
     this.setEndPoint('cursos/all');
     return this.get();
   }
+  single(id){
+    this.setEndPoint('cursos/single/:id');
+    return this.get();
+  }
   
 }
